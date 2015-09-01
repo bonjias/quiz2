@@ -1,23 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  
 
 <div class="booyah-box1 col-xs-10 col-xs-offset-1">
-  
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
-}
-</script>
-
-
-  <h1>Enter Your Eatspot Details</h1>
+  <h1>Enter Your Skate Spot Details</h1>
   <%= simple_form_for @eatspot do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
@@ -27,4 +15,38 @@ function showPosition(position) {
     <%= f.input :inputlongitude %>
     <%= f.submit 'Create', :class => 'btn btn-primary' %>
   <% end %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<p> No address, No Problem! Click the button to get your spot.</p>
+
+<button onclick="getLocation()">Find My Spot</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+  $('#lat').val(position.coords.latitude);
+  $('#lng').val(position.coords.longitude);
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;  
+}
+</script>
+
+
+<input id="lat" type="text" />
+<input id="lng" type="text" />
+
+</body>
+</html>
 </div>
