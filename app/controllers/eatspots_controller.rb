@@ -7,5 +7,16 @@ class EatspotsController < ApplicationController
 		@eatspot = Eatspot.new 
 	end 
 
-	
+	def create
+		Eatspot.create(eatspot_params)
+		 redirect_to root_path
+		end
+
+
+		private
+
+		def eatspot_params
+		params.require(:eatspot).permit(:name, :description, :address, :inputlattitude,:inputlongitude)
+		end 
+
 end

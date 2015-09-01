@@ -2,7 +2,7 @@
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
+  background: #336600;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
@@ -16,6 +16,10 @@ body {
 }
 
 h1 {
+	 font-family: '2dumbregular', sans-serif;
+  	font-weight:bold;
+  	color: red;
+  	ffont-size:38px;
 	text-align: center;
 }
 
