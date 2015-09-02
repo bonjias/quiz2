@@ -41,6 +41,6 @@ gem 'simple_form'
 gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
+gem "figaro", ">= 1.0.0"
 # Use debugger
 # gem 'debugger', group: [:development, :test]

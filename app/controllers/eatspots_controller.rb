@@ -19,4 +19,7 @@ class EatspotsController < ApplicationController
 		params.require(:eatspot).permit(:name, :description, :address, :inputlattitude,:inputlongitude)
 		end 
 
+	def major
+	end 
+
 end
