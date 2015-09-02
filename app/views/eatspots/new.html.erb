@@ -5,14 +5,14 @@
   
 
 <div class="booyah-box1 col-xs-10 col-xs-offset-1">
-  <h1>Enter Your Skate Spot Details</h1>
+  <h1>Where you at </h1>
   <%= simple_form_for @eatspot do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :description %>
     <br />
-    <%= f.input :inputlattitude %>
-    <%= f.input :inputlongitude %>
+    <%= f.input :inputlattitude, :input_html => {:id => 'lat' } %>
+    <%= f.input :inputlongitude, :input_html => {:id => 'lng' } %>
     <%= f.submit 'Create', :class => 'btn btn-primary' %>
   <% end %>
 
@@ -43,9 +43,6 @@ function showPosition(position) {
 }
 </script>
 
-
-<input id="lat" type="text" />
-<input id="lng" type="text" />
 
 </body>
 </html>
