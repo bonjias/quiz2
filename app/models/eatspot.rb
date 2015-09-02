@@ -1,4 +1,6 @@
 class Eatspot < ActiveRecord::Base
 geocoded_by :address
-after_validation :geocode
+reverse_geocoded_by :inputlattitude, :inputlongitude
+after_validation :geocode, :reverse_geocode
+
 end

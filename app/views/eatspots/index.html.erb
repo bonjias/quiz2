@@ -10,11 +10,23 @@
 <div class="booyah-box1 col-xs-4 col-xs-offset-4">
 	<% @eatspots.each do |eatspot| %>
   <div>
+    Name
     <h1><%= eatspot.name %></h1><br />
+    Address
     <i><%= eatspot.address %></i><br />
+    description
     <p><%= eatspot.description %></p><br />
+    input lat
      <p><%= eatspot.inputlattitude %></p><br />
+     inout long
       <p><%= eatspot.inputlongitude %></p><br />
+      lat
+       <p><%= eatspot.latitude %></p><br />
+       long
+      <p><%= eatspot.longitude %></p><br />
+      geo address 
+      <p><%= eatspot.geo_address%></p><br/>
+
   </div>
 
   <hr />
