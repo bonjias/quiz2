@@ -40,10 +40,12 @@ function initMap() {
       name: 'Custom Style'
   });
   var customMapTypeId = 'custom_style';
+ 
+
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center: {lat: 40.876163, lng: -73.402858},  //  Huntington . 
+    center: {lat: 40.876163, lng: -73.402858},  //  Huntington  adding code after line 43. 
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
