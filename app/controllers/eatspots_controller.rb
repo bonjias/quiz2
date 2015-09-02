@@ -20,6 +20,7 @@ class EatspotsController < ApplicationController
 		end 
 
 	def major
+		@eatspots = Eatspot.all
 	end 
 
 end
