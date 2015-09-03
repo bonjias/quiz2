@@ -1,61 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adam and.me in London!</title>
-  <link data-turbolinks-track="true" href="/assets/application-e4530d735742d45e6ad907e621c408d9.css" media="all" rel="stylesheet" />
-  <script data-turbolinks-track="true" src="/assets/application-d8d826046502bb7a44391171fdcb1387.js"></script>
-  <meta content="authenticity_token" name="csrf-param" />
-<meta content="BT0thvgHnNHJzwVRRrimo8b60lfkE4JLD8kfPok6Vjo=" name="csrf-token" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-<div id="wrapper">
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="logo" href="/">
-      <img alt="Logo 2" src="/assets/logo_2-59d0cd5bf1a4f2e503ed626139784481.png" />
-</a>    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">        
-        <li>
-          <a href="/places/new">Add a new place</a>        
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/sign_in">Sign in</a></li>
-          <li><a href="/users/sign_up">Sign up</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-<div id="indexbox" class="col-sm-4 col-sm-offset-7 col-xs-10 col-xs-offset-1">
-  <p>This site features a map of all the fun kid-friendly places that Adam and I have located throughout London. We'd love your contributions too, so please feel free to <a href="/users/sign_up">sign up</a> and add your own recommendations! <a href="/about">Read more about us...</a></p>
-</div>
+ 
 
 <div id="map"></div>
 
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script type="text/javascript">
-  // http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
-  // http://stackoverflow.com/questions/16825290/google-maps-api-v3-adding-multiple-markers-w-info-windows-w-custom-text
+  
     var locations = <%= @eatspots.collect {|es| [es.name, es.inputlattitude, es.inputlongitude, 4]}.to_json.html_safe %>;
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 6,
+      zoom: 12,
       center: new google.maps.LatLng(<%= @eatspots.first.inputlattitude %>, <%= @eatspots.first.inputlongitude %>),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
