@@ -19,15 +19,10 @@
     <div id="map"></div>
     <script>
 function initMap() {
-	var locations = [
-      <% @eatspots.each do |eatspot| %>
-        <% if eatspot == @eatspots.last %>
-        ['<%= link_to eatspot.name, eatspot_path(eatspot) %><br/><%= eatspot.description %>', <%= eatspot.inputlattitude %>, <%= eatspot.inputlongitude %>, 4]
-        <% else %>
-        ['<%= link_to eatspot.name, eatspot_path(eatspot) %><br/><%= eatspot.description %>', <%= eatspot.latitude %>, <%= eatspot.inputlongitude %>, 4],
-        <% end %>
-      <% end %>
-    ];
+	var myLatLng = {lat: -25.363, lng: 131.044};
+  
+
+
 // . 
 
   var customMapType = new google.maps.StyledMapType([
@@ -65,19 +60,11 @@ function initMap() {
   map.mapTypes.set(customMapTypeId, customMapType);
   map.setMapTypeId(customMapTypeId);
  
-  var marker, i;
-
-  for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
 
 
  
@@ -88,5 +75,7 @@ function initMap() {
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
         async defer></script>
+
+
   </body>
 </html>
