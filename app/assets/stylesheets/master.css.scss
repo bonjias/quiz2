@@ -31,3 +31,17 @@ h1 {
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
+
+
+
+html, body, #wrapper{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#map{
+    height: 100%;
+    width: 100%;    
+}
+

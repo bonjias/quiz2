@@ -6,6 +6,9 @@ class EatspotsController < ApplicationController
 	def new 
 		@eatspot = Eatspot.new 
 	end 
+		def major
+		@eatspots = Eatspot.all
+	end 
 
 	def create
 		Eatspot.create(eatspot_params)
@@ -19,8 +22,6 @@ class EatspotsController < ApplicationController
 		params.require(:eatspot).permit(:name, :description, :address, :inputlattitude,:inputlongitude)
 		end 
 
-	def major
-		@eatspots = Eatspot.all
-	end 
+
 
 end
